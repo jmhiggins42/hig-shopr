@@ -35,14 +35,22 @@ body {
   font-size: 1.5em;
 }
 
+.row {
+  transition: all 0.15s;
+}
+
 .header {
   display: inline-block;
+  cursor: -webkit-grab;
   cursor: grab;
-  font-size: 9.5rem;
+  font-size: 4.5rem;
   font-weight: 700;
   text-shadow: -1px 0 1px var(--black), 0 1px 1px var(--black), 1px 0 1px var(--black),
     0 -1px 1px var(--black);
   transition: all 0.2s;
+}
+.header.active {
+  font-size: 9.5rem;
 }
 .header:hover:first-child {
   transform: scale(2) rotate(1deg);

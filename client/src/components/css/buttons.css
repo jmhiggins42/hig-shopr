@@ -104,7 +104,7 @@
       var(--blue-darker) 100%
     );
   background-position: -15em 0, -12em 25%, -18em 50%, -16em 75%, -10em 100%;
-  background-size: 115% 20.5%;
+  background-size: 115% 21%;
   background-repeat: no-repeat;
   content: '';
   transition: background-position 0.5s steps(8);
@@ -157,7 +157,7 @@
       var(--green-darker) 100%
     );
   background-position: -15em 0, -12em 25%, -18em 50%, -16em 75%, -10em 100%;
-  background-size: 115% 20.5%;
+  background-size: 115% 21%;
   background-repeat: no-repeat;
   content: '';
   transition: background-position 0.5s steps(8);
@@ -210,7 +210,7 @@
       var(--red-darker) 100%
     );
   background-position: -15em 0, -12em 25%, -18em 50%, -16em 75%, -10em 100%;
-  background-size: 115% 20.5%;
+  background-size: 115% 21%;
   background-repeat: no-repeat;
   content: '';
   transition: background-position 0.5s steps(8);
