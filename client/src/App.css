@@ -1,28 +1,32 @@
-.App {
+:root {
+  --white: #fff;
+  --white-darkest: #dde3e6;
+  --black-lightest: #485f67;
+  --black-light: #222a2c;
+  --black: #000;
+  --red: #ff5747;
+  --red-darker: #cb4539;
+  --pink: #fa55ca;
+  --blue-lighter: #40d7ff;
+  --blue-light: #00ccff;
+  --blue: #16bfff;
+  --blue-dark: #129acd;
+  --blue-darker: #1273cd;
+  --navy: #4f74a5;
+  --navy-darker: #223d56;
+  --green: #2bdc33;
+  --green-dark: #23b32a;
+  --orange: #ff8a05;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--black-light);
+  color: var(--orange);
   text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
+  font-family: 'Raleway', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }

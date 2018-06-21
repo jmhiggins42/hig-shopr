@@ -4,6 +4,7 @@ const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
 const cors = require('cors');
 const mongo = require('./app/mongodb.connection');
+const router = require('./app/routes');
 
 require('dotenv').config();
 
@@ -23,6 +24,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(cors(corsConfig));
+
+app.use(router);
 
 mongo
   .connect(
