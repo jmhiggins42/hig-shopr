@@ -1,64 +1,6 @@
-:root {
-  --white: #fff;
-  --white-darkest: #dde3e6;
-  --black-lightest: #485f67;
-  --black-light: #222a2c;
-  --black: #000;
-  --red: #ff5747;
-  --red-dark: #cb4539;
-  --red-darker: #7d3021;
-  --pink: #fa55ca;
-  --blue-lighter: #40d7ff;
-  --blue-light: #00ccff;
-  --blue: #16bfff;
-  --blue-dark: #129acd;
-  --blue-darker: #1273cd;
-  --navy: #4f74a5;
-  --navy-darker: #223d56;
-  --green: #2bdc33;
-  --green-dark: #23b32a;
-  --green-darker: #135f16;
-  --orange: #ff8a05;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  background-color: var(--black-light);
-  color: var(--orange);
-  text-align: center;
-  font-family: 'Raleway', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-  font-size: 1.5em;
-}
-
-.header {
-  display: inline-block;
-  cursor: grab;
-  font-size: 9.5rem;
-  font-weight: 700;
-  transition: all 0.2s;
-}
-.header:hover:first-child {
-  transform: scale(2) rotate(1deg);
-  color: var(--pink);
-}
-.header:hover:nth-child(even) {
-  transform: scale(1.1) rotate(-1deg);
-}
-.header:hover:nth-child(odd) {
-  transform: scale(1.1) rotate(1deg);
-}
-.header:hover:last-child {
-  transform: scale(2) rotate(180deg);
-  color: var(--navy);
-}
-
-/* BUTTONS */
-
 .eightbit-main {
   position: relative;
+  cursor: pointer;
   z-index: 0;
   overflow: hidden;
   font-size: 0.7em;
@@ -77,6 +19,7 @@ body {
 }
 .eightbit-success {
   position: relative;
+  cursor: pointer;
   z-index: 0;
   overflow: hidden;
   font-size: 0.7em;
@@ -95,6 +38,7 @@ body {
 }
 .eightbit-danger {
   position: relative;
+  cursor: pointer;
   z-index: 0;
   overflow: hidden;
   font-size: 0.7em;
