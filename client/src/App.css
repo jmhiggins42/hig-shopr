@@ -33,6 +33,30 @@ body {
   font-size: 1.5em;
 }
 
+.header {
+  display: inline-block;
+  cursor: grab;
+  font-size: 9.5rem;
+  font-weight: 700;
+  transition: all 0.2s;
+}
+.header:hover:first-child {
+  transform: scale(2) rotate(1deg);
+  color: var(--pink);
+}
+.header:hover:nth-child(even) {
+  transform: scale(1.1) rotate(-1deg);
+}
+.header:hover:nth-child(odd) {
+  transform: scale(1.1) rotate(1deg);
+}
+.header:hover:last-child {
+  transform: scale(2) rotate(180deg);
+  color: var(--navy);
+}
+
+/* BUTTONS */
+
 .eightbit-main {
   position: relative;
   z-index: 0;
