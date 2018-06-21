@@ -5,7 +5,8 @@
   --black-light: #222a2c;
   --black: #000;
   --red: #ff5747;
-  --red-darker: #cb4539;
+  --red-dark: #cb4539;
+  --red-darker: #7d3021;
   --pink: #fa55ca;
   --blue-lighter: #40d7ff;
   --blue-light: #00ccff;
@@ -16,6 +17,7 @@
   --navy-darker: #223d56;
   --green: #2bdc33;
   --green-dark: #23b32a;
+  --green-darker: #135f16;
   --orange: #ff8a05;
 }
 
@@ -29,4 +31,229 @@ body {
   text-align: center;
   font-family: 'Raleway', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   font-size: 1.5em;
+}
+
+.eightbit-main {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  font-size: 0.7em;
+  padding: 0.7em 1.5em;
+  border: none;
+  background: linear-gradient(
+    to bottom,
+    var(--blue) 0%,
+    var(--blue) 90%,
+    var(--blue-darker) 90%,
+    var(--blue-darker) 90%,
+    var(--blue-darker) 100%
+  );
+  color: var(--white);
+  text-transform: uppercase;
+}
+.eightbit-success {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  font-size: 0.7em;
+  padding: 0.7em 1.5em;
+  border: none;
+  background: linear-gradient(
+    to bottom,
+    var(--green) 0%,
+    var(--green) 90%,
+    var(--green-darker) 90%,
+    var(--green-darker) 90%,
+    var(--green-darker) 100%
+  );
+  color: var(--white);
+  text-transform: uppercase;
+}
+.eightbit-danger {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  font-size: 0.7em;
+  padding: 0.7em 1.5em;
+  border: none;
+  background: linear-gradient(
+    to bottom,
+    var(--red) 0%,
+    var(--red) 90%,
+    var(--red-darker) 90%,
+    var(--red-darker) 90%,
+    var(--red-darker) 100%
+  );
+  color: var(--white);
+  text-transform: uppercase;
+}
+
+.eightbit-main:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+      to right,
+      var(--blue-dark) 0%,
+      var(--blue-dark) 92%,
+      var(--blue-darker) 92%,
+      var(--blue-darker) 92%,
+      var(--blue-darker) 100%
+    ),
+    linear-gradient(
+      to right,
+      var(--blue-dark) 0%,
+      var(--blue-dark) 92%,
+      var(--white) 92%,
+      var(--white) 92%,
+      var(--white) 100%
+    ),
+    linear-gradient(
+      to right,
+      var(--blue-dark) 0%,
+      var(--blue-dark) 92%,
+      var(--blue-darker) 92%,
+      var(--blue-darker) 92%,
+      var(--blue-darker) 100%
+    ),
+    linear-gradient(
+      to right,
+      var(--blue-dark) 0%,
+      var(--blue-dark) 92%,
+      var(--white) 92%,
+      var(--white) 92%,
+      var(--white) 100%
+    ),
+    linear-gradient(
+      to right,
+      var(--blue-dark) 0%,
+      var(--blue-dark) 92%,
+      var(--blue-darker) 92%,
+      var(--blue-darker) 92%,
+      var(--blue-darker) 100%
+    );
+  background-position: -15em 0, -12em 25%, -18em 50%, -16em 75%, -10em 100%;
+  background-size: 115% 20.5%;
+  background-repeat: no-repeat;
+  content: '';
+  transition: background-position 0.5s steps(8);
+}
+.eightbit-success:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+      to right,
+      var(--green-dark) 0%,
+      var(--green-dark) 92%,
+      var(--green-darker) 92%,
+      var(--green-darker) 92%,
+      var(--green-darker) 100%
+    ),
+    linear-gradient(
+      to right,
+      var(--green-dark) 0%,
+      var(--green-dark) 92%,
+      var(--white) 92%,
+      var(--white) 92%,
+      var(--white) 100%
+    ),
+    linear-gradient(
+      to right,
+      var(--green-dark) 0%,
+      var(--green-dark) 92%,
+      var(--green-darker) 92%,
+      var(--green-darker) 92%,
+      var(--green-darker) 100%
+    ),
+    linear-gradient(
+      to right,
+      var(--green-dark) 0%,
+      var(--green-dark) 92%,
+      var(--white) 92%,
+      var(--white) 92%,
+      var(--white) 100%
+    ),
+    linear-gradient(
+      to right,
+      var(--green-dark) 0%,
+      var(--green-dark) 92%,
+      var(--green-darker) 92%,
+      var(--green-darker) 92%,
+      var(--green-darker) 100%
+    );
+  background-position: -15em 0, -12em 25%, -18em 50%, -16em 75%, -10em 100%;
+  background-size: 115% 20.5%;
+  background-repeat: no-repeat;
+  content: '';
+  transition: background-position 0.5s steps(8);
+}
+.eightbit-danger:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+      to right,
+      var(--red-dark) 0%,
+      var(--red-dark) 92%,
+      var(--red-darker) 92%,
+      var(--red-darker) 92%,
+      var(--red-darker) 100%
+    ),
+    linear-gradient(
+      to right,
+      var(--red-dark) 0%,
+      var(--red-dark) 92%,
+      var(--white) 92%,
+      var(--white) 92%,
+      var(--white) 100%
+    ),
+    linear-gradient(
+      to right,
+      var(--red-dark) 0%,
+      var(--red-dark) 92%,
+      var(--red-darker) 92%,
+      var(--red-darker) 92%,
+      var(--red-darker) 100%
+    ),
+    linear-gradient(
+      to right,
+      var(--red-dark) 0%,
+      var(--red-dark) 92%,
+      var(--white) 92%,
+      var(--white) 92%,
+      var(--white) 100%
+    ),
+    linear-gradient(
+      to right,
+      var(--red-dark) 0%,
+      var(--red-dark) 92%,
+      var(--red-darker) 92%,
+      var(--red-darker) 92%,
+      var(--red-darker) 100%
+    );
+  background-position: -15em 0, -12em 25%, -18em 50%, -16em 75%, -10em 100%;
+  background-size: 115% 20.5%;
+  background-repeat: no-repeat;
+  content: '';
+  transition: background-position 0.5s steps(8);
+}
+
+.eightbit-main:hover:before {
+  background-position: 0 0, 0 25%, 0 50%, 0 75%, 0 100%;
+}
+.eightbit-success:hover:before {
+  background-position: 0 0, 0 25%, 0 50%, 0 75%, 0 100%;
+}
+.eightbit-danger:hover:before {
+  background-position: 0 0, 0 25%, 0 50%, 0 75%, 0 100%;
 }

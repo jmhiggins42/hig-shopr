@@ -10,7 +10,11 @@ class App extends Component {
           <div className="col">Hig</div>
           <div className="col">Shop</div>
           <div className="col">R</div>
+          <div className="col">
+            <button class="eightbit-danger">Test</button>
+          </div>
         </div>
+        <div className="row" />
       </div>
     );
   }
