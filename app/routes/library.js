@@ -9,6 +9,6 @@ module.exports = router;
 
 router.post('/', validateBody(GameCreate), libraryController.create);
 router.put('/:id([0-9a-fA-F]{24})', validateBody(GameUpdate), libraryController.update);
-router.get('/', '/:id([0-9a-fA-F]{24})', libraryController.getAll);
+router.get('/', libraryController.getAll);
 router.get('/:id([0-9a-fA-F]{24})', libraryController.getById);
 router.delete('/:id([0-9a-fA-F]{24})', libraryController.delete);

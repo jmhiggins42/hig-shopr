@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders correctly active 1`] = `
+<div
+  className="row h-100"
+>
+  <div
+    className="col my-auto"
+  >
+    <div
+      className="header"
+    >
+      <span
+        className="active"
+      >
+        t
+      </span>
+      <span
+        className="active"
+      >
+        e
+      </span>
+      <span
+        className="active"
+      >
+        s
+      </span>
+      <span
+        className="active"
+      >
+        t
+      </span>
+    </div>
+    <div
+      className="col"
+    >
+      <button
+        className="eightbit-main "
+        onClick={undefined}
+        type="button"
+      >
+        start
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Header renders correctly inactive 1`] = `
+<div
+  className="row"
+>
+  <div
+    className=" top-bar float-left"
+  >
+    <div
+      className="header"
+    >
+      <span
+        className=""
+      >
+        t
+      </span>
+      <span
+        className=""
+      >
+        e
+      </span>
+      <span
+        className=""
+      >
+        s
+      </span>
+      <span
+        className=""
+      >
+        t
+      </span>
+    </div>
+  </div>
+</div>
+`;

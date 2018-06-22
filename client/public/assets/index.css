@@ -25,6 +25,11 @@
   box-sizing: border-box;
 }
 
+body,
+html {
+  height: 100%;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -35,11 +40,21 @@ body {
   font-size: 1.5em;
 }
 
-.row {
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.main .row:first-child {
+  margin-top: 6rem;
+}
+
+header * {
   transition: all 0.15s;
 }
 
-.header {
+.header span {
   display: inline-block;
   cursor: -webkit-grab;
   cursor: grab;
@@ -49,20 +64,24 @@ body {
     0 -1px 1px var(--black);
   transition: all 0.2s;
 }
-.header.active {
+.header span.active {
   font-size: 9.5rem;
 }
-.header:hover:first-child {
+.header span:hover:first-child {
   transform: scale(2) rotate(1deg);
   color: var(--pink);
 }
-.header:hover:nth-child(even) {
+.header span:hover:nth-child(even) {
   transform: scale(1.1) rotate(-1deg);
 }
-.header:hover:nth-child(odd) {
+.header span:hover:nth-child(odd) {
   transform: scale(1.1) rotate(1deg);
 }
-.header:hover:last-child {
+.header span:hover:last-child {
   transform: scale(2) rotate(180deg);
   color: var(--navy);
+}
+
+main {
+  transition: all 1s;
 }

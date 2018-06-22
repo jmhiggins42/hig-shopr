@@ -7,9 +7,7 @@ const connect = (url, dbName) => {
     return Promise.resolve(_db);
   }
 
-  return MongoClient.connect(url).then(client => {
-    _db = client.db(dbName);
-  });
+  return MongoClient.connect(url).then(client => (_db = client.db(dbName)));
 };
 
 module.exports = {
