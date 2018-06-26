@@ -46,7 +46,7 @@ body {
   left: 0;
 }
 
-.main .row:first-child {
+.main > .row:first-child {
   margin-top: 6rem;
 }
 
@@ -84,4 +84,12 @@ header * {
 
 main {
   transition: all 1s;
+}
+
+.game-list {
+  margin-top: 1rem;
+}
+
+.game-list-item {
+  cursor: pointer;
 }

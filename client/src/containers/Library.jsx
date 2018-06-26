@@ -25,14 +25,15 @@ class Library extends React.Component {
   onSubmit = game => {
     create(game)
       .then(id => {
-        alert('Game added to the list!');
         this.setState(prevState => {
           const library = Object.assign({}, prevState.library, { [id]: game });
-          return { library };
+          return { library, formData: null };
         });
       })
       .catch(err => alert('Error!'));
   };
+
+  onCancel = () => this.setState({ formData: null });
 
   render() {
     return (
@@ -40,7 +41,7 @@ class Library extends React.Component {
         <LibraryGames
           onSelect={this.onSelect}
           onAddNew={this.onAddNew}
-          gamesObj={this.state.library}
+          games={Object.values(this.state.library)}
         />
         {this.state.formData && (
           <LibraryForm

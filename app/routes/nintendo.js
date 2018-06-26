@@ -5,5 +5,5 @@ module.exports = router;
 
 // turned off for now...
 
-router.post('/:num', nintendoController.loadNum);
-router.post('/', nintendoController.loadAll);
+// router.post('/:num', nintendoController.loadNum);
+// router.post('/', nintendoController.loadAll);

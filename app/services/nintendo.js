@@ -7,7 +7,7 @@ const hashTable = arrToObj(games);
 const loadNum = num => {
   return connection
     .db()
-    .collection('nintendo2')
+    .collection('nintendo')
     .insertMany(Object.values(hashTable).slice(0, num))
     .then(result => result.insertedIds);
 };
@@ -15,7 +15,7 @@ const loadNum = num => {
 const loadAll = () => {
   return connection
     .db()
-    .collection('nintendo2')
+    .collection('nintendo')
     .insertMany(Object.values(hashTable))
     .then(result => result.insertedIds);
 };

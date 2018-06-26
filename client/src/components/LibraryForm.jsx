@@ -1,7 +1,9 @@
 import React from 'react';
 import EightBitBtn from './EightBitBtn';
 
-const systemList = ['Wii', 'Wii U', '3DS', 'Switch', 'Gamecube'];
+const systemList = ['Wii', 'Wii U', '3DS', 'Switch', 'Gamecube'].sort(
+  (a, b) => a.toLowerCase() - b.toLowerCase()
+);
 
 class LibraryForm extends React.Component {
   constructor(props) {
@@ -25,6 +27,11 @@ class LibraryForm extends React.Component {
     tags: formData.tags || []
   });
 
+  componentWillReceiveProps(newProps) {
+    const formData = this.initializeForm(newProps.formData);
+    this.setState({ formData, hasBeenValidated: false });
+  }
+
   onChange = e => {
     const name = e.target.name;
     const value = e.target.value;
@@ -37,7 +44,7 @@ class LibraryForm extends React.Component {
     }, this.validateForm);
   };
 
-  onSubmit = e => {
+  submitHandler = e => {
     e.preventDefault();
 
     this.props.onSubmit(this.state.formData);
@@ -69,8 +76,8 @@ class LibraryForm extends React.Component {
 
   render() {
     return (
-      <div className="col">
-        <form ref={this.formEl} onSubmit={e => this.onSubmit.bind(this, e)} noValidate>
+      <div className="col-sm-6">
+        <form ref={this.formEl} onSubmit={e => this.submitHandler(e)} noValidate>
           <div className="form-group">
             <label htmlFor="title">Title</label>
             <input
@@ -78,7 +85,7 @@ class LibraryForm extends React.Component {
               name="title"
               type="email"
               className="form-control"
-              values={this.state.formData.title}
+              value={this.state.formData.title}
               onChange={this.onChange}
               required
             />
@@ -90,14 +97,20 @@ class LibraryForm extends React.Component {
               name="status"
               type="text"
               className="form-control"
-              values={this.state.formData.status}
+              value={this.state.formData.status}
               onChange={this.onChange}
               required
             />
           </div>
           <div className="form-group">
             <label htmlFor="system">System</label>
-            <select id="system" name="system" className="form-control" onChange={this.onChange}>
+            <select
+              id="system"
+              name="system"
+              className="form-control"
+              value={this.state.formData.system}
+              onChange={this.onChange}
+            >
               <option value="">Pick a game</option>
               {systemList.sort((a, b) => a.toLowerCase() - b.toLowerCase()).map(system => (
                 <option key={system} value={system}>
@@ -107,7 +120,11 @@ class LibraryForm extends React.Component {
             </select>
           </div>
           <div className="form-group">
-            <EightBitBtn classType="main" clickHandler={e => this.onSubmit.bind(this, e)}>
+            <EightBitBtn
+              type="submit"
+              classType="main"
+              clickHandler={e => this.submitHandler.bind(e)}
+            >
               submit
             </EightBitBtn>
             <EightBitBtn classType="danger" clickHandler={this.props.onCancel}>
