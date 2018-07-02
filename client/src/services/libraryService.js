@@ -40,9 +40,22 @@ export const create = data => {
 };
 
 export const update = data => {
-  const url = `${baseUrl}/${data.id}`;
+  const url = `${baseUrl}/${data._id}`;
   const config = {
     method: 'PUT',
+    data,
+    withCredentials: true
+  };
+
+  return axios(url, config)
+    .then(successResponseHandler)
+    .catch(errorResponseHandler);
+};
+
+export const _delete = id => {
+  const url = `${baseUrl}/${id}`;
+  const config = {
+    method: 'DELETE',
     withCredentials: true
   };
 

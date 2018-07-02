@@ -47,12 +47,16 @@ class LibraryForm extends React.Component {
   submitHandler = e => {
     e.preventDefault();
 
-    this.props.onSubmit(this.state.formData);
+    if (this.formEl.current.checkValidity()) {
+      const game = { _id: this.props.formData._id || null, ...this.state.formData };
+      this.props.onSubmit(game);
+    }
 
-    this.setState({ hasBeenValidated: true });
+    this.setState({ hasBeenValidated: true }, this.validateForm);
   };
 
   validateForm = () => {
+    /* No custom validation yet */
     this.setErrorMessages();
   };
 
@@ -74,7 +78,20 @@ class LibraryForm extends React.Component {
     }
   };
 
+  renderClassNames = inputName =>
+    this.state.hasBeenValidated && this.state.errorMessages[inputName]
+      ? 'form-control is-invalid'
+      : 'form-control is-valid';
+
+  renderErrorMsgs = inputName =>
+    this.state.hasBeenValidated && this.state.errorMessages[inputName] ? (
+      <div className="invalid-feedback">{this.state.errorMessages[inputName]}</div>
+    ) : null;
+
   render() {
+    const { formData: propsFormData } = this.props;
+    const { formData } = this.state;
+
     return (
       <div className="col-sm-6">
         <form ref={this.formEl} onSubmit={e => this.submitHandler(e)} noValidate>
@@ -83,12 +100,13 @@ class LibraryForm extends React.Component {
             <input
               id="title"
               name="title"
-              type="email"
-              className="form-control"
-              value={this.state.formData.title}
+              type="text"
+              className={this.renderClassNames('title')}
+              value={formData.title}
               onChange={this.onChange}
               required
             />
+            {this.renderErrorMsgs('title')}
           </div>
           <div className="form-group">
             <label htmlFor="status">Status</label>
@@ -96,28 +114,31 @@ class LibraryForm extends React.Component {
               id="status"
               name="status"
               type="text"
-              className="form-control"
-              value={this.state.formData.status}
+              className={this.renderClassNames('status')}
+              value={formData.status}
               onChange={this.onChange}
               required
             />
+            {this.renderErrorMsgs('status')}
           </div>
           <div className="form-group">
             <label htmlFor="system">System</label>
             <select
               id="system"
               name="system"
-              className="form-control"
-              value={this.state.formData.system}
+              className={this.renderClassNames('system')}
+              value={formData.system}
               onChange={this.onChange}
+              required
             >
-              <option value="">Pick a game</option>
+              <option value="">Choose a system</option>
               {systemList.sort((a, b) => a.toLowerCase() - b.toLowerCase()).map(system => (
                 <option key={system} value={system}>
                   {system}
                 </option>
               ))}
             </select>
+            {this.renderErrorMsgs('system')}
           </div>
           <div className="form-group">
             <EightBitBtn
@@ -125,7 +146,7 @@ class LibraryForm extends React.Component {
               classType="main"
               clickHandler={e => this.submitHandler.bind(e)}
             >
-              submit
+              {propsFormData._id ? 'update' : 'submit'}
             </EightBitBtn>
             <EightBitBtn classType="danger" clickHandler={this.props.onCancel}>
               cancel

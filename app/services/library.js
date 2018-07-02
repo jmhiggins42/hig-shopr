@@ -1,8 +1,6 @@
 const { connection, ObjectId } = require('../mongodb.connection');
 
 const create = model => {
-  model.gameId = ObjectId(model.gameId);
-
   return connection
     .db()
     .collection('library')
@@ -11,7 +9,7 @@ const create = model => {
 };
 
 const update = (id, model) => {
-  delete model.gameId;
+  model._id = ObjectId(model._id);
 
   return connection
     .db()

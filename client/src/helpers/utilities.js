@@ -1,5 +1,5 @@
-exports.arrToObj = arr =>
-  arr.reduce((acc, curr) => {
-    acc[curr._id] = curr;
+export const arrToObj = arr =>
+  arr.reduce((acc, curr, i) => {
+    acc[curr._id || i] = curr;
     return acc;
   }, {});
