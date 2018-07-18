@@ -33,7 +33,7 @@ build/Release
 # Dependency directories
 node_modules
 jspm_packages
-.package-lock.json
+package-lock.json
 yarn.lock
 
 # Optional npm cache directory
@@ -57,5 +57,3 @@ typings/
 
 # build folders
 **/build/**
-
-package-lock.json
