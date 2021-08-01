@@ -28,12 +28,12 @@
     "express": "^4.16.3",
     "joi": "^13.4.0",
     "joi-objectid": "^2.0.0",
-    "mongodb": "^3.0.10",
-    "morgan": "^1.9.0",
+    "mongodb": "^3.6.10",
+    "morgan": "^1.10.0",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0"
   },
   "devDependencies": {
-    "nodemon": "^1.17.5"
+    "nodemon": "^2.0.12"
   }
 }
